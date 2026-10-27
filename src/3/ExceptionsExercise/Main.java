@@ -27,6 +27,17 @@ public class Main {
 
         System.out.println(account);
 
+        try {
+            System.out.println("How much do you want to withdraw? ");
+            Double withdrawAmount = sc.nextDouble();
+            account.withdraw(withdrawAmount);
+
+            System.out.println(account);
+
+        }
+        catch (DomainExceptions e) {
+            System.out.println(e.getMessage());
+        }
 
 
         sc.close();

@@ -49,7 +49,7 @@ public class Account {
     }
 
     public void withdraw(Double amount) throws DomainExceptions {
-        if (amount < balance) {
+        if (amount > balance) {
             throw  new DomainExceptions("Withdraws must be less or equal to the amount on the account! ");
         }
         if (amount > getWithdrawLimit()){
