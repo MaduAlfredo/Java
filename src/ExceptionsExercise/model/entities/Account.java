@@ -1,4 +1,6 @@
-package ExcepitionsExercise.model.entities;
+package ExceptionsExercise.model.entities;
+
+import ExceptionsExercise.model.Exceptions.DomainExceptions;
 
 public class Account {
 
@@ -46,15 +48,23 @@ public class Account {
 
     }
 
-    public void withdraw(Double amount) throws Exception {
+    public void withdraw(Double amount) throws DomainExceptions {
         if (amount < balance) {
-            throw  new Exception("Withdraws must be less or equal to the amount on the account! ");
+            throw  new DomainExceptions("Withdraws must be less or equal to the amount on the account! ");
         }
         if (amount > getWithdrawLimit()){
-            throw  new Exception("Withdraws must be R$200,00 or less, per limit!");
+            throw  new DomainExceptions("Withdraws must be R$200,00 or less, per limit!");
         }
 
         balance -= amount;
 
+    }
+
+    @Override
+    public String toString() {
+        return "Account: " + "\n" +
+                "Number: " + number + "\n" +
+                "Holder: " + holder + "\n" +
+                "Balance: " + balance ;
     }
 }

@@ -1,4 +1,4 @@
-package ExcepitionsExercise.model.Exceptions;
+package ExceptionsExercise.model.Exceptions;
 
 public class DomainExceptions extends Exception{
 
