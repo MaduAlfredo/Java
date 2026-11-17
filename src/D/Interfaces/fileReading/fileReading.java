@@ -1,4 +1,4 @@
-package D.Interfaces;
+package D.Interfaces.fileReading;
 
 import java.io.File;
 import java.io.IOException;
